@@ -13,6 +13,11 @@
 		E5E0C9BF248F734900D2FA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9BD248F734900D2FA30 /* Main.storyboard */; };
 		E5E0C9C1248F734A00D2FA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9C0248F734A00D2FA30 /* Assets.xcassets */; };
 		E5E0C9C4248F734A00D2FA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9C2248F734A00D2FA30 /* LaunchScreen.storyboard */; };
+		E5E0C9D9248FF65400D2FA30 /* BaseResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9D7248FF65400D2FA30 /* BaseResponseObject.swift */; };
+		E5E0C9DA248FF65400D2FA30 /* URL+TrainSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9D8248FF65400D2FA30 /* URL+TrainSchedule.swift */; };
+		E5E0C9DF248FF65D00D2FA30 /* StationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */; };
+		E5E0C9E0248FF65D00D2FA30 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9DE248FF65D00D2FA30 /* Station.swift */; };
+		E5E0C9E22490015400D2FA30 /* String+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9E12490015400D2FA30 /* String+Numbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		E5E0C9C0248F734A00D2FA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E0C9C3248F734A00D2FA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E0C9C5248F734A00D2FA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5E0C9D7248FF65400D2FA30 /* BaseResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseObject.swift; sourceTree = "<group>"; };
+		E5E0C9D8248FF65400D2FA30 /* URL+TrainSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+TrainSchedule.swift"; sourceTree = "<group>"; };
+		E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationResponse.swift; sourceTree = "<group>"; };
+		E5E0C9DE248FF65D00D2FA30 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		E5E0C9E12490015400D2FA30 /* String+Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Numbers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 		E5E0C9B6248F734900D2FA30 /* TrainSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				E5E0C9DB248FF65D00D2FA30 /* Models */,
 				E5E0C9CB248F9DD600D2FA30 /* Common */,
 				E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */,
 				E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */,
@@ -71,8 +82,28 @@
 		E5E0C9CB248F9DD600D2FA30 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E5E0C9D7248FF65400D2FA30 /* BaseResponseObject.swift */,
+				E5E0C9D8248FF65400D2FA30 /* URL+TrainSchedule.swift */,
+				E5E0C9E12490015400D2FA30 /* String+Numbers.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E5E0C9DB248FF65D00D2FA30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9DC248FF65D00D2FA30 /* StationResponse */,
+				E5E0C9DE248FF65D00D2FA30 /* Station.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5E0C9DC248FF65D00D2FA30 /* StationResponse */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */,
+			);
+			path = StationResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E0C9D9248FF65400D2FA30 /* BaseResponseObject.swift in Sources */,
 				E5E0C9BC248F734900D2FA30 /* ViewController.swift in Sources */,
+				E5E0C9DA248FF65400D2FA30 /* URL+TrainSchedule.swift in Sources */,
 				E5E0C9B8248F734900D2FA30 /* AppDelegate.swift in Sources */,
 				E5E0C9BA248F734900D2FA30 /* SceneDelegate.swift in Sources */,
+				E5E0C9E22490015400D2FA30 /* String+Numbers.swift in Sources */,
+				E5E0C9DF248FF65D00D2FA30 /* StationResponse.swift in Sources */,
+				E5E0C9E0248FF65D00D2FA30 /* Station.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
