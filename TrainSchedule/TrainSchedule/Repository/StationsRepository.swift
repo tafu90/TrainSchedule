@@ -10,12 +10,27 @@ import Foundation
 
 class StationsRepository {
 
-    func getAllStation(completion: @escaping (Any?) -> Void) {
+    func getStation(stationType: StationType, completion: @escaping (Any?) -> Void) {
 
-        URLSession.shared.dataTask(with: URL.urlGetAllStation()) { (data, response, error) in
+        URLSession.shared.dataTask(with: URL.urlGetAllStationByType(type: stationType.parameter)) { (data, response, error) in
             if let data = data {
 
                 let stationResponse = StationResponse(data: data, objectName: "objStation")
+                let viewModels = stationResponse.allStation.map { TrainStationCellViewModel($0) }
+                completion(viewModels)
+            }
+            else {
+                completion(error?.localizedDescription)
+            }
+        }.resume()
+    }
+
+    func getStation(stationName: String, completion: @escaping (Any?) -> Void) {
+
+        URLSession.shared.dataTask(with: URL.urlGetAllStationByName(name: stationName)) { (data, response, error) in
+            if let data = data {
+
+                let stationResponse = StationResponse(data: data, objectName: "objStationFilter")
                 let viewModels = stationResponse.allStation.map { TrainStationCellViewModel($0) }
                 completion(viewModels)
             }

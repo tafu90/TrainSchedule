@@ -36,13 +36,26 @@ class TrainStationsViewController: BaseViewController {
 
     func getAllStation() {
 
-        stationsRepository.getAllStation { (response) in
-            if let viewModels = response as? [TrainStationCellViewModel] {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
-                    self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
+        if searchedText.isEmpty {
+            stationsRepository.getStation(stationType: searchedType) { (response) in
+                if let viewModels = response as? [TrainStationCellViewModel] {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
+                    }
                 }
             }
+        }
+        else {
+            stationsRepository.getStation(stationName: searchedText) { (response) in
+                if let viewModels = response as? [TrainStationCellViewModel] {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else { return }
+                        self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
+                    }
+                }
+            }
+
         }
     }
 
@@ -68,5 +81,6 @@ extension TrainStationsViewController: TrainStationFilterViewControllerDelegate 
     func didMakeSearch(name: String, stationType: StationType) {
         searchedText = name
         searchedType = stationType
+        getAllStation()
     }
 }

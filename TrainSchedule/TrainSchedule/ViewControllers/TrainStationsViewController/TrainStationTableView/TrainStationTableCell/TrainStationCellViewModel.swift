@@ -13,7 +13,7 @@ struct TrainStationCellViewModel: TableViewCellViewModel {
     let desc: String
     let alias: String
     let stationCode: String
-    let stationId: Int
+    let stationId: Int?
 
     init(_ station: Station) {
         self.desc = station.stationDesc

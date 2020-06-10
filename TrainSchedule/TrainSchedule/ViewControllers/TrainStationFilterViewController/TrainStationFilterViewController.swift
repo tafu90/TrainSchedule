@@ -81,11 +81,12 @@ class TrainStationFilterViewController: UIViewController {
 
     @IBAction func searchButtonTapped(_ sender: Any) {
         if segmentController.selectedSegmentIndex == 0 {
-            delegate?.didMakeSearch(name: filterSectedName, stationType: .all)
+            delegate?.didMakeSearch(name: nameTextField.text ?? "", stationType: .all)
         }
         else {
             delegate?.didMakeSearch(name: "", stationType: filterStationType)
         }
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func segmentControllerTapped(_ sender: Any) {

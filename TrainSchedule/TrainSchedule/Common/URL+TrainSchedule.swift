@@ -12,13 +12,13 @@ extension URL {
 
     private static let baseUrl = URL(string: "http://api.irishrail.ie/realtime/realtime.asmx/")
 
-    static func urlGetAllStation() -> URL {
-        let urlString = "getAllStationsXML"
+    static func urlGetAllStationByType(type: String) -> URL {
+        let urlString = "getAllStationsXML_WithStationType?StationType=\(type)"
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 
-    static func urlGetAllStationByType() -> URL {
-        let urlString = "getAllStationsXML_WithStationType"
+    static func urlGetAllStationByName(name: String) -> URL {
+        let urlString = "getStationsFilterXML?StationText=\(name)"
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 
@@ -44,11 +44,6 @@ extension URL {
 
     static func urlGetStationDataByCodeWithNumMins() -> URL {
         let urlString = "getStationDataByCodeXML_WithNumMins"
-        return URL(string: urlString, relativeTo: baseUrl)!
-    }
-
-    static func urlGetStationsFilterWithText() -> URL {
-        let urlString = "getStationsFilterXML"
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 

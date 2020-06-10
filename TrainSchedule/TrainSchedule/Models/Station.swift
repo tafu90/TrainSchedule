@@ -12,10 +12,10 @@ struct Station {
 
     let stationDesc: String
     let stationAlias: String?
-    let stationLatitude: Double
-    let stationLongitude: Double
+    let stationLatitude: Double?
+    let stationLongitude: Double?
     let stationCode: String
-    let stationId: Int
+    let stationId: Int?
 
     init(dict: [String: String]) {
         stationDesc = dict["StationDesc"] ?? ""
