@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E522A1CC2491163C006ADE19 /* StationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1CB2491163C006ADE19 /* StationsRepository.swift */; };
+		E522A1D024911A2C006ADE19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1CF24911A2C006ADE19 /* BaseViewController.swift */; };
 		E5E0C9B8248F734900D2FA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */; };
 		E5E0C9BA248F734900D2FA30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */; };
 		E5E0C9BF248F734900D2FA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9BD248F734900D2FA30 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E522A1CB2491163C006ADE19 /* StationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRepository.swift; sourceTree = "<group>"; };
+		E522A1CF24911A2C006ADE19 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E5E0C9B4248F734900D2FA30 /* TrainSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E522A1CA24911623006ADE19 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E522A1CB2491163C006ADE19 /* StationsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		E5E0C9AB248F734900D2FA30 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		E5E0C9B6248F734900D2FA30 /* TrainSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				E522A1CA24911623006ADE19 /* Repository */,
 				E5E0C9E32490D26700D2FA30 /* ViewControllers */,
 				E5E0C9DB248FF65D00D2FA30 /* Models */,
 				E5E0C9CB248F9DD600D2FA30 /* Common */,
@@ -107,6 +120,7 @@
 				E5E0C9F22490E55800D2FA30 /* ReusableView.swift */,
 				E5E0C9F42490E57B00D2FA30 /* BaseTableView.swift */,
 				E5E0C9FF2490E96900D2FA30 /* ReusableTableViewCell.swift */,
+				E522A1CF24911A2C006ADE19 /* BaseViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -272,7 +286,9 @@
 				E5E0C9F92490E7FD00D2FA30 /* TrainStationTableCell.swift in Sources */,
 				E5E0C9D9248FF65400D2FA30 /* BaseResponseObject.swift in Sources */,
 				E5E0C9E72490D28D00D2FA30 /* TrainStationsViewController.swift in Sources */,
+				E522A1CC2491163C006ADE19 /* StationsRepository.swift in Sources */,
 				E5E0CA002490E96900D2FA30 /* ReusableTableViewCell.swift in Sources */,
+				E522A1D024911A2C006ADE19 /* BaseViewController.swift in Sources */,
 				E5E0C9EB2490D6B100D2FA30 /* TabBarController.swift in Sources */,
 				E5E0C9DA248FF65400D2FA30 /* URL+TrainSchedule.swift in Sources */,
 				E5E0CA022490EB7000D2FA30 /* TrainStationCellViewModel.swift in Sources */,
