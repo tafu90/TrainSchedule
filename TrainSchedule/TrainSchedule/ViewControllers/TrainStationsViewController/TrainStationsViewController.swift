@@ -12,6 +12,8 @@ class TrainStationsViewController: BaseViewController {
 
     @IBOutlet private weak var trainStationTableView: TrainStationTableView!
     private let stationsRepository: StationsRepository
+    private var searchedText: String = ""
+    private var searchedType: StationType = .all
 
     // MARK: - Initialize
     init(_ stationsRepository: StationsRepository) {
@@ -45,7 +47,12 @@ class TrainStationsViewController: BaseViewController {
     }
 
     @objc override func rightButtonTapped() {
-        print("Open Filter View")
+
+        let filetVC = TrainStationFilterViewController()
+        filetVC.modalPresentationStyle = .overFullScreen
+        self.present(filetVC, animated: false, completion: nil)
+        filetVC.setFilter(name: searchedText, stationType: searchedType)
+        filetVC.delegate = self
     }
 }
 
@@ -53,5 +60,13 @@ extension TrainStationsViewController: TableViewUpdateProtocol {
 
     func tableViewDidRefresh(_ tableView: UITableView) {
         getAllStation()
+    }
+}
+
+extension TrainStationsViewController: TrainStationFilterViewControllerDelegate {
+
+    func didMakeSearch(name: String, stationType: StationType) {
+        searchedText = name
+        searchedType = stationType
     }
 }
