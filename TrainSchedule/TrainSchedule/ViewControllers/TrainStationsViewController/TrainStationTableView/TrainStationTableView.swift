@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol AllConversationTableViewDelegate: class {
-    func didSelectCell(indexPath: IndexPath)
+protocol TrainStationTableViewDelegate: class {
+    func didSelectStation(_ code: String, title: String)
 }
 
 class TrainStationTableView: BaseTableView {
 
-    weak var allConversationTableViewDelegate: AllConversationTableViewDelegate?
+    weak var trainStationTableViewDelegate: TrainStationTableViewDelegate?
 
     override func registerCells() {
         registerNib(TrainStationTableCell.self)
@@ -44,6 +44,9 @@ class TrainStationTableView: BaseTableView {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        allConversationTableViewDelegate?.didSelectCell(indexPath: indexPath)
+
+        if let trainStationCellViewModel = cellViewModels[indexPath.row] as? TrainStationCellViewModel {
+            trainStationTableViewDelegate?.didSelectStation(trainStationCellViewModel.stationCode, title: trainStationCellViewModel.desc)
+        }
     }
 }

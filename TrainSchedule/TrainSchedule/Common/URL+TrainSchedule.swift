@@ -22,6 +22,11 @@ extension URL {
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 
+    static func urlGetStationData(stationCode: String, minutes: String) -> URL {
+        let urlString = "getStationDataByCodeXML_WithNumMins?StationCode=\(stationCode)&NumMins=\(minutes)"
+        return URL(string: urlString, relativeTo: baseUrl)!
+    }
+
     static func urlGetCurrentTrains() -> URL {
         let urlString = "getCurrentTrainsXML"
         return URL(string: urlString, relativeTo: baseUrl)!
@@ -29,21 +34,6 @@ extension URL {
 
     static func urlGetCurrentTrainsByType() -> URL {
         let urlString = "getCurrentTrainsXML_WithTrainType"
-        return URL(string: urlString, relativeTo: baseUrl)!
-    }
-
-    static func urlGetStationDataByName() -> URL {
-        let urlString = "getStationDataByNameXML"
-        return URL(string: urlString, relativeTo: baseUrl)!
-    }
-
-    static func urlGetStationDataByCode() -> URL {
-        let urlString = "getStationDataByCodeXML"
-        return URL(string: urlString, relativeTo: baseUrl)!
-    }
-
-    static func urlGetStationDataByCodeWithNumMins() -> URL {
-        let urlString = "getStationDataByCodeXML_WithNumMins"
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 

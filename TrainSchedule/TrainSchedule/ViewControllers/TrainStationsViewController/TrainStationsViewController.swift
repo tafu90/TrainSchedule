@@ -30,6 +30,7 @@ class TrainStationsViewController: BaseViewController {
         super.viewDidLoad()
         title = "Train Stations"
         trainStationTableView.dataDelegate = self
+        trainStationTableView.trainStationTableViewDelegate = self
         addRightButton(image: UIImage(named: "filter"))
         getAllStation()
     }
@@ -37,25 +38,23 @@ class TrainStationsViewController: BaseViewController {
     func getAllStation() {
 
         if searchedText.isEmpty {
-            stationsRepository.getStation(stationType: searchedType) { (response) in
-                if let viewModels = response as? [TrainStationCellViewModel] {
-                    DispatchQueue.main.async { [weak self] in
-                        guard let self = self else { return }
-                        self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
-                    }
-                }
+            stationsRepository.getStation(stationType: searchedType) { [weak self] (response) in
+                self?.updateTableData(response: response)
             }
         }
         else {
-            stationsRepository.getStation(stationName: searchedText) { (response) in
-                if let viewModels = response as? [TrainStationCellViewModel] {
-                    DispatchQueue.main.async { [weak self] in
-                        guard let self = self else { return }
-                        self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
-                    }
-                }
+            stationsRepository.getStation(stationName: searchedText) { [weak self]  (response) in
+                self?.updateTableData(response: response)
             }
+        }
+    }
 
+    private func updateTableData(response: Any?) {
+        if let viewModels = response as? [TrainStationCellViewModel] {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
+            }
         }
     }
 
@@ -73,6 +72,15 @@ extension TrainStationsViewController: TableViewUpdateProtocol {
 
     func tableViewDidRefresh(_ tableView: UITableView) {
         getAllStation()
+    }
+}
+
+extension TrainStationsViewController: TrainStationTableViewDelegate {
+    func didSelectStation(_ code: String, title: String) {
+
+        let stationDetailsRepository = StationDetailsRepository(stationCode: code)
+        let stationDetailsVC = StationDetailsViewController(stationDetailsRepository, stationTitle: title)
+        navigationController?.pushViewController(stationDetailsVC, animated: true)
     }
 }
 
