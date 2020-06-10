@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E5E0C9B8248F734900D2FA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */; };
 		E5E0C9BA248F734900D2FA30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */; };
-		E5E0C9BC248F734900D2FA30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9BB248F734900D2FA30 /* ViewController.swift */; };
 		E5E0C9BF248F734900D2FA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9BD248F734900D2FA30 /* Main.storyboard */; };
 		E5E0C9C1248F734A00D2FA30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9C0248F734A00D2FA30 /* Assets.xcassets */; };
 		E5E0C9C4248F734A00D2FA30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9C2248F734A00D2FA30 /* LaunchScreen.storyboard */; };
@@ -18,13 +17,17 @@
 		E5E0C9DF248FF65D00D2FA30 /* StationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */; };
 		E5E0C9E0248FF65D00D2FA30 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9DE248FF65D00D2FA30 /* Station.swift */; };
 		E5E0C9E22490015400D2FA30 /* String+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9E12490015400D2FA30 /* String+Numbers.swift */; };
+		E5E0C9E72490D28D00D2FA30 /* TrainStationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9E52490D28D00D2FA30 /* TrainStationsViewController.swift */; };
+		E5E0C9E82490D28D00D2FA30 /* TrainStationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9E62490D28D00D2FA30 /* TrainStationsViewController.xib */; };
+		E5E0C9EB2490D6B100D2FA30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9EA2490D6B100D2FA30 /* TabBarController.swift */; };
+		E5E0C9F02490DF8000D2FA30 /* TrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9EE2490DF8000D2FA30 /* TrainsViewController.swift */; };
+		E5E0C9F12490DF8000D2FA30 /* TrainsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9EF2490DF8000D2FA30 /* TrainsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E5E0C9B4248F734900D2FA30 /* TrainSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5E0C9BB248F734900D2FA30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5E0C9BE248F734900D2FA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5E0C9C0248F734A00D2FA30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E0C9C3248F734A00D2FA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +37,11 @@
 		E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationResponse.swift; sourceTree = "<group>"; };
 		E5E0C9DE248FF65D00D2FA30 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		E5E0C9E12490015400D2FA30 /* String+Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Numbers.swift"; sourceTree = "<group>"; };
+		E5E0C9E52490D28D00D2FA30 /* TrainStationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStationsViewController.swift; sourceTree = "<group>"; };
+		E5E0C9E62490D28D00D2FA30 /* TrainStationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainStationsViewController.xib; sourceTree = "<group>"; };
+		E5E0C9EA2490D6B100D2FA30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E5E0C9EE2490DF8000D2FA30 /* TrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsViewController.swift; sourceTree = "<group>"; };
+		E5E0C9EF2490DF8000D2FA30 /* TrainsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +74,12 @@
 		E5E0C9B6248F734900D2FA30 /* TrainSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				E5E0C9E32490D26700D2FA30 /* ViewControllers */,
 				E5E0C9DB248FF65D00D2FA30 /* Models */,
 				E5E0C9CB248F9DD600D2FA30 /* Common */,
-				E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */,
-				E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */,
-				E5E0C9BB248F734900D2FA30 /* ViewController.swift */,
-				E5E0C9BD248F734900D2FA30 /* Main.storyboard */,
-				E5E0C9C0248F734A00D2FA30 /* Assets.xcassets */,
-				E5E0C9C2248F734A00D2FA30 /* LaunchScreen.storyboard */,
+				E5E0C9EC2490DB5500D2FA30 /* SupportingFiles */,
 				E5E0C9C5248F734A00D2FA30 /* Info.plist */,
+				E5E0C9BD248F734900D2FA30 /* Main.storyboard */,
 			);
 			path = TrainSchedule;
 			sourceTree = "<group>";
@@ -104,6 +109,53 @@
 				E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */,
 			);
 			path = StationResponse;
+			sourceTree = "<group>";
+		};
+		E5E0C9E32490D26700D2FA30 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9E92490D64A00D2FA30 /* TabBarController */,
+				E5E0C9ED2490DF6800D2FA30 /* TrainsViewController */,
+				E5E0C9E42490D27300D2FA30 /* TrainStationsViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5E0C9E42490D27300D2FA30 /* TrainStationsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9E52490D28D00D2FA30 /* TrainStationsViewController.swift */,
+				E5E0C9E62490D28D00D2FA30 /* TrainStationsViewController.xib */,
+			);
+			path = TrainStationsViewController;
+			sourceTree = "<group>";
+		};
+		E5E0C9E92490D64A00D2FA30 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9EA2490D6B100D2FA30 /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		E5E0C9EC2490DB5500D2FA30 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9C0248F734A00D2FA30 /* Assets.xcassets */,
+				E5E0C9C2248F734A00D2FA30 /* LaunchScreen.storyboard */,
+				E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */,
+				E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E5E0C9ED2490DF6800D2FA30 /* TrainsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0C9EE2490DF8000D2FA30 /* TrainsViewController.swift */,
+				E5E0C9EF2490DF8000D2FA30 /* TrainsViewController.xib */,
+			);
+			path = TrainsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E0C9C4248F734A00D2FA30 /* LaunchScreen.storyboard in Resources */,
+				E5E0C9F12490DF8000D2FA30 /* TrainsViewController.xib in Resources */,
 				E5E0C9C1248F734A00D2FA30 /* Assets.xcassets in Resources */,
+				E5E0C9E82490D28D00D2FA30 /* TrainStationsViewController.xib in Resources */,
 				E5E0C9BF248F734900D2FA30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,9 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E0C9D9248FF65400D2FA30 /* BaseResponseObject.swift in Sources */,
-				E5E0C9BC248F734900D2FA30 /* ViewController.swift in Sources */,
+				E5E0C9E72490D28D00D2FA30 /* TrainStationsViewController.swift in Sources */,
+				E5E0C9EB2490D6B100D2FA30 /* TabBarController.swift in Sources */,
 				E5E0C9DA248FF65400D2FA30 /* URL+TrainSchedule.swift in Sources */,
 				E5E0C9B8248F734900D2FA30 /* AppDelegate.swift in Sources */,
+				E5E0C9F02490DF8000D2FA30 /* TrainsViewController.swift in Sources */,
 				E5E0C9BA248F734900D2FA30 /* SceneDelegate.swift in Sources */,
 				E5E0C9E22490015400D2FA30 /* String+Numbers.swift in Sources */,
 				E5E0C9DF248FF65D00D2FA30 /* StationResponse.swift in Sources */,
