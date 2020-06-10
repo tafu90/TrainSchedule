@@ -10,11 +10,13 @@ import UIKit
 
 class TrainStationsViewController: UIViewController {
 
+    @IBOutlet private weak var trainStationTableView: TrainStationTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Train Stations"
+        trainStationTableView.dataDelegate = self
 
-        view.backgroundColor = .black
         getAllStation { (response) in
             print(response)
         }
@@ -26,12 +28,26 @@ class TrainStationsViewController: UIViewController {
             if let data = data {
 
                 let stationResponse = StationResponse(data: data, objectName: "objStation")
-                print(stationResponse.allStation.count)
+                let viewModels = stationResponse.allStation.map { TrainStationCellViewModel($0) }
+
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
+                }
                 completion(stationResponse)
             }
             else {
                 completion(error?.localizedDescription)
             }
         }.resume()
+    }
+}
+
+extension TrainStationsViewController: TableViewUpdateProtocol {
+
+    func tableViewDidRefresh(_ tableView: UITableView) {
+        getAllStation { (response) in
+            print(response)
+        }
     }
 }
