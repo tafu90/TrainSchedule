@@ -45,6 +45,7 @@ class TrainStationFilterViewController: UIViewController {
         makeAnimation(hideMenu: false, color: blurrColor)
     }
 
+    // MARK: - Set Up
     func setFilter(name: String, stationType: StationType) {
         let pickerView = PickerView(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
         let pickerViewData: [PickerViewModel] = pickerData.map({ PickerViewModel($0) })

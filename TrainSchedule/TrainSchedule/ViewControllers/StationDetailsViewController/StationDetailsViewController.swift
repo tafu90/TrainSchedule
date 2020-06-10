@@ -12,6 +12,10 @@ class StationDetailsViewController: BaseViewController {
 
     private let stationDetailsRepository: StationDetailsRepository
     private let stationTitle: String
+    @IBOutlet private weak var sliderView: UISlider!
+    @IBOutlet private weak var sliderValueLabel: UILabel!
+    @IBOutlet private weak var tableView: StationDetailsTableView!
+
 
     // MARK: - Initialize
     init(_ stationDetailsRepository: StationDetailsRepository, stationTitle: String) {
@@ -24,26 +28,55 @@ class StationDetailsViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = stationTitle
         navigationController?.navigationBar.topItem?.title = ""
+        tableView.dataDelegate = self
+        tableView.stationDetailsTableViewDelegate = self
+        updateStationDetails()
+    }
 
-        stationDetailsRepository.getStationDetails(stationMinutes: "90") { (response) in
-            print(response)
+    // MARK: - Action
+    @IBAction func sliderDidChangeValue(_ sender: Any, forEvent event: UIEvent) {
+
+        sliderValueLabel.text = String(Int(sliderView.value))+" min"
+
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .ended:
+                 updateStationDetails()
+            default:
+                break
+            }
         }
     }
 
+    private func updateStationDetails() {
+        stationDetailsRepository.getStationDetails(stationMinutes: String(Int(sliderView.value))) { (response) in
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            if let viewModels = response as? [StationDetailsCellViewModel] {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
+                }
+            }
+        }
     }
-    */
+}
 
+extension StationDetailsViewController: TableViewUpdateProtocol {
+
+    func tableViewDidRefresh(_ tableView: UITableView) {
+        updateStationDetails()
+    }
+}
+
+extension StationDetailsViewController: StationDetailsTableViewDelegate {
+
+    func checkTrainMove(_ code: String) {
+        print("Train movement view controller")
+    }
 }

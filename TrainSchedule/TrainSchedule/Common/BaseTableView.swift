@@ -125,7 +125,12 @@ class BaseTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     func registerKeyboardNotifications() {}
 
     func makeNoDataView() -> UIView? {
-        return nil
+
+        let noDataLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.width))
+        noDataLabel.textAlignment = .center
+        noDataLabel.text = "No data available"
+        noDataLabel.backgroundColor = UIColor.white
+        return noDataLabel
     }
 
     // MARK: - UITableViewDataSource

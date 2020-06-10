@@ -22,8 +22,8 @@ class StationDetailsRepository {
             if let data = data {
 
                 let stationResponse = StationDetailsResponse(data: data, objectName: "objStationData")
-//                let viewModels = stationResponse.allStation.map { TrainStationCellViewModel($0) }
-                completion(stationResponse)
+                let viewModels = stationResponse.stationDetails.map { StationDetailsCellViewModel($0) }
+                completion(viewModels)
             }
             else {
                 completion(error?.localizedDescription)
