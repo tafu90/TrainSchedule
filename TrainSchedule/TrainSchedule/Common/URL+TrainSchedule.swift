@@ -32,8 +32,8 @@ extension URL {
            return URL(string: urlString, relativeTo: baseUrl)!
        }
 
-    static func urlGetCurrentTrainsByType() -> URL {
-        let urlString = "getCurrentTrainsXML_WithTrainType"
+    static func urlGetCurrentTrainsByType(type: String) -> URL {
+        let urlString = "getCurrentTrainsXML_WithTrainType?TrainType=\(type)"
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 }

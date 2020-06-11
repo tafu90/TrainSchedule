@@ -33,8 +33,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBarTabs.append(styleController(navController: trainStationsNavController, title: "Stations", imageName: "trainStation", tag: 0))
 
         // Trains
-//        let trainsNavController = UINavigationController(rootViewController: TrainsViewController())
-        let trainsNavController = UINavigationController(rootViewController: AppFactory.trainMovementViewController("e109"))
+        let trainsNavController = UINavigationController(rootViewController: AppFactory.trainsViewController())
         tabBarTabs.append(styleController(navController: trainsNavController, title: "Trains", imageName: "train", tag: 1))
 
         setViewControllers(tabBarTabs, animated: true)

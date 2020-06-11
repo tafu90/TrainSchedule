@@ -19,6 +19,10 @@ class AppFactory {
         return TrainStationsViewController(StationsRepository())
     }
 
+    static func trainsViewController() -> TrainsViewController {
+        return TrainsViewController(TrainsRepository())
+    }
+
     static func stationDetailsViewController(code: String, title: String) -> StationDetailsViewController {
         let stationDetailsRepository = StationDetailsRepository(stationCode: code)
         let stationDetailsVC = StationDetailsViewController(stationDetailsRepository, stationTitle: title)

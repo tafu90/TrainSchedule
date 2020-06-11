@@ -29,7 +29,7 @@ class TrainMovementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataDelegate = self
-        title = stationTitle
+        title = "Train "+stationTitle
         navigationController?.navigationBar.topItem?.title = ""
     }
 
