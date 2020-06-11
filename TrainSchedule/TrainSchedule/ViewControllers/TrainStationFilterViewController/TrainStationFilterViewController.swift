@@ -38,6 +38,8 @@ class TrainStationFilterViewController: UIViewController {
         super.viewDidLoad()
         centeredView.clipsToBounds = true
         centeredView.layer.cornerRadius = 5
+        centeredView.layer.borderWidth = 1
+        centeredView.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
         view.backgroundColor = UIColor.clear
 
         segmentController.selectedSegmentIndex = 0

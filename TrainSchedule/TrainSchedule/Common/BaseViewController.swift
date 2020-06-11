@@ -13,7 +13,7 @@ class BaseViewController: UIViewController {
     func addRightButton(image: UIImage?) {
         
         let filterButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(rightButtonTapped))
-        filterButton.tintColor = UIColor.black
+        filterButton.tintColor = UIColor.systemBlue
         self.navigationItem.rightBarButtonItem = filterButton
     }
 

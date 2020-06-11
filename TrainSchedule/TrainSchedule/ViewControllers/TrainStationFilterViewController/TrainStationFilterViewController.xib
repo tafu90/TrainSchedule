@@ -76,7 +76,7 @@
                                 <constraint firstAttribute="width" constant="48" id="hsf-z7-Esz"/>
                             </constraints>
                             <state key="normal" title="Search">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
                             <connections>
                                 <action selector="searchButtonTapped:" destination="-1" eventType="touchUpInside" id="nEo-wD-s0x"/>
@@ -89,7 +89,7 @@
                                 <constraint firstAttribute="height" constant="30" id="O2t-y1-tGw"/>
                             </constraints>
                             <state key="normal" title="Cancel">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="iPP-fe-Ehv"/>
