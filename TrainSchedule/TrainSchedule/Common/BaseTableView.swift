@@ -94,7 +94,6 @@ class BaseTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         isRefreshing = false
         self.tableViewViewModel = tableViewModel
 
-        print(tableViewModel.cellViewModels.count)
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.reloadData()
@@ -134,6 +133,15 @@ class BaseTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     }
 
     // MARK: - UITableViewDataSource
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count
     }

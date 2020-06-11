@@ -39,20 +39,21 @@ class TrainStationsViewController: BaseViewController {
 
         if searchedText.isEmpty {
             stationsRepository.getStation(stationType: searchedType) { [weak self] (response) in
-                self?.updateTableData(response: response)
+                guard let self = self else { return }
+                self.updateTableData(response: response)
             }
         }
         else {
             stationsRepository.getStation(stationName: searchedText) { [weak self]  (response) in
-                self?.updateTableData(response: response)
+                guard let self = self else { return }
+                self.updateTableData(response: response)
             }
         }
     }
 
     private func updateTableData(response: Any?) {
         if let viewModels = response as? [TrainStationCellViewModel] {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
+            DispatchQueue.main.async {
                 self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
             }
         }

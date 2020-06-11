@@ -19,12 +19,12 @@ struct LiveTrain {
     let publicMessage: String
 
     init(dict: [String: String]) {
-        trainStatus = dict["TrainStatus"] ?? ""
-        trainCode = dict["TrainCode"] ?? ""
-        trainLongitude = dict["TrainLongitude"]?.toDouble() ?? 0.0
-        trainLatitude =  dict["TrainLatitude"]?.toDouble() ?? 0.0
-        trainDate = dict["TrainDate"] ?? ""
-        direction = dict["Direction"] ?? ""
-        publicMessage = dict["PublicMessage"] ?? ""
+        trainStatus = dict[safeString: "TrainStatus"]
+        trainCode = dict[safeString: "TrainCode"]
+        trainLongitude = dict[safeDouble: "TrainLongitude"]
+        trainLatitude =  dict[safeDouble: "TrainLatitude"]
+        trainDate = dict[safeString: "TrainDate"]
+        direction = dict[safeString: "Direction"]
+        publicMessage = dict[safeString: "PublicMessage"]
     }
 }

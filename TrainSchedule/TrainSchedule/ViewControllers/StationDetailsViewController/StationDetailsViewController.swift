@@ -55,11 +55,11 @@ class StationDetailsViewController: BaseViewController {
     }
 
     private func updateStationDetails() {
-        stationDetailsRepository.getStationDetails(stationMinutes: String(Int(sliderView.value))) { (response) in
+        stationDetailsRepository.getStationDetails(stationMinutes: String(Int(sliderView.value))) { [weak self]  (response) in
 
+            guard let self = self else { return }
             if let viewModels = response as? [StationDetailsCellViewModel] {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async {
                     self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
                 }
             }

@@ -8,11 +8,12 @@
 
 import Foundation
 
-class TrainsRepository {
+class TrainsRepository: BaseRepository {
 
     func getTrains(stationType: StationType, completion: @escaping (Any?) -> Void) {
 
-        URLSession.shared.dataTask(with: URL.urlGetCurrentTrainsByType(type: stationType.parameter)) { (data, response, error) in
+        guard let url = URL.urlGetCurrentTrainsByType(type: stationType.parameter) else { return }
+        urlSession.dataTask(with: url) { (data, response, error) in
             if let data = data {
 
                 let stationResponse = LiveTrainResponse(data: data, objectName: "objTrainPositions")

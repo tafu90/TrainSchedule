@@ -41,10 +41,10 @@ class TrainMovementViewController: BaseViewController {
     // MARK: - Private
     private func updateTrainMovement() {
 
-        trainMovementRepository.getTrainMovement { (response) in
+        trainMovementRepository.getTrainMovement { [weak self] (response) in
+            guard let self = self else { return }
             if let viewModels = response as? [TrainMovementTableCellViewModel] {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async {
                     self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
                 }
             }

@@ -29,23 +29,23 @@ struct TrainMovement {
     let stopType: String
 
     init(dict: [String: String]) {
-        traincode = dict["Traincode"] ?? ""
-        traindate =  dict["Traindate"] ?? ""
-        locationCode = dict["LocationCode"] ?? ""
-        locationFullName = dict["LocationFullName"] ?? ""
-        locationOrder = dict["LocationOrder"] ?? ""
-        locationType = dict["LocationType"] ?? ""
-        trainOrigin = dict["TrainOrigin"] ?? ""
-        trainDestination = dict["TrainDestination"] ?? ""
-        scheduledArrival =  dict["ScheduledArrival"] ?? ""
-        scheduledDeparture = dict["ScheduledDeparture"] ?? ""
-        expectedArrival = dict["ExpectedArrival"] ?? ""
-        expectedDeparture = dict["ExpectedDeparture"] ?? ""
+        traincode = dict[safeString: "Traincode"]
+        traindate =  dict[safeString: "Traindate"]
+        locationCode = dict[safeString: "LocationCode"]
+        locationFullName = dict[safeString: "LocationFullName"]
+        locationOrder = dict[safeString: "LocationOrder"]
+        locationType = dict[safeString: "LocationType"]
+        trainOrigin = dict[safeString: "TrainOrigin"]
+        trainDestination = dict[safeString: "TrainDestination"]
+        scheduledArrival =  dict[safeString: "ScheduledArrival"]
+        scheduledDeparture = dict[safeString: "ScheduledDeparture"]
+        expectedArrival = dict[safeString: "ExpectedArrival"]
+        expectedDeparture = dict[safeString: "ExpectedDeparture"]
 
         arrival = dict["Arrival"]
         departure =  dict["Departure"]
         autoArrival = dict["AutoArrival"]
         autoDepart = dict["AutoDepart"]
-        stopType =  dict["StopType"] ?? ""
+        stopType =  dict[safeString: "StopType"]
     }
 }

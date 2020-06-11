@@ -22,10 +22,6 @@ class StationDetailsTableView: BaseTableView {
     }
 
     //MARK: - Table Header
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count
     }
@@ -36,7 +32,7 @@ class StationDetailsTableView: BaseTableView {
             fatalError("Wrong cell class")
         }
 
-        guard let viewModel = tableViewViewModel?.cellViewModels[indexPath.row] as? StationDetailsCellViewModel  else {
+        guard let viewModel = tableViewViewModel?.cellViewModels[safe: indexPath.row] as? StationDetailsCellViewModel  else {
             return cell
         }
 

@@ -8,11 +8,12 @@
 
 import Foundation
 
-class StationsRepository {
+class StationsRepository: BaseRepository {
 
     func getStation(stationType: StationType, completion: @escaping (Any?) -> Void) {
 
-        URLSession.shared.dataTask(with: URL.urlGetAllStationByType(type: stationType.parameter)) { (data, response, error) in
+        guard let url = URL.urlGetAllStationByType(type: stationType.parameter) else { return }
+        urlSession.dataTask(with: url) { (data, response, error) in
             if let data = data {
 
                 let stationResponse = StationResponse(data: data, objectName: "objStation")
@@ -27,7 +28,9 @@ class StationsRepository {
 
     func getStation(stationName: String, completion: @escaping (Any?) -> Void) {
 
-        URLSession.shared.dataTask(with: URL.urlGetAllStationByName(name: stationName)) { (data, response, error) in
+        guard let url = URL.urlGetAllStationByName(name: stationName) else { return }
+
+        urlSession.dataTask(with: url) { (data, response, error) in
             if let data = data {
 
                 let stationResponse = StationResponse(data: data, objectName: "objStationFilter")

@@ -21,10 +21,6 @@ class TrainStationTableView: BaseTableView {
     }
 
     //MARK: - Table Header
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count
     }
@@ -35,7 +31,7 @@ class TrainStationTableView: BaseTableView {
             fatalError("Wrong cell class")
         }
 
-        guard let viewModel = tableViewViewModel?.cellViewModels[indexPath.row] as? TrainStationCellViewModel  else {
+        guard let viewModel = tableViewViewModel?.cellViewModels[safe: indexPath.row] as? TrainStationCellViewModel  else {
             return cell
         }
 
@@ -45,7 +41,7 @@ class TrainStationTableView: BaseTableView {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        if let trainStationCellViewModel = cellViewModels[indexPath.row] as? TrainStationCellViewModel {
+        if let trainStationCellViewModel = cellViewModels[safe: indexPath.row] as? TrainStationCellViewModel {
             trainStationTableViewDelegate?.didSelectStation(trainStationCellViewModel.stationCode, title: trainStationCellViewModel.desc)
         }
     }

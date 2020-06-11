@@ -57,8 +57,8 @@ class PickerView: UIView {
     func setup(viewModels: [PickerViewModel], selectedViewModel: PickerViewModel) {
         pickerViewDataSource = viewModels
         pickerView.reloadAllComponents()
-        if let firstIndex = viewModels.firstIndex(where: {$0.parameter == selectedViewModel.parameter}) {
-            pickerView.selectedRow(inComponent: firstIndex)
+        if let firstIndex = viewModels.firstIndex(where: {$0.parameter == selectedViewModel.parameter}), firstIndex < pickerViewDataSource.count {
+            pickerView.selectRow(firstIndex, inComponent: 0, animated: false)
         }
     }
 
@@ -88,6 +88,6 @@ extension PickerView: UIPickerViewDelegate {
 
         var attributes = [NSAttributedString.Key: AnyObject]()
         attributes[.foregroundColor] = UIColor.black
-        return NSAttributedString(string: pickerViewDataSource[row].name ?? "", attributes: attributes)
+        return NSAttributedString(string: pickerViewDataSource[safe: row]?.name ?? "", attributes: attributes)
     }
 }

@@ -14,6 +14,12 @@ protocol TrainStationFilterViewControllerDelegate: class {
 
 class TrainStationFilterViewController: UIViewController {
 
+    private enum Constants {
+        static let animationDuration = 0.35
+        static let blurrColor = UIColor.black.withAlphaComponent(0.7)
+        static let pickerData: [StationType] = [.all, .dart, .mainline, .suburban]
+    }
+
     @IBOutlet private weak var backgroundButton: UIButton!
     @IBOutlet private weak var segmentController: UISegmentedControl!
     @IBOutlet private weak var nameTextField: UITextField!
@@ -22,10 +28,7 @@ class TrainStationFilterViewController: UIViewController {
     @IBOutlet private weak var buttonCancel: UIButton!
     @IBOutlet private weak var centeredView: UIView!
 
-    private let animationDuration = 0.35
-    private let blurrColor = UIColor.black.withAlphaComponent(0.7)
     private var filterStationType: StationType = .all
-    private let pickerData: [StationType] = [.all, .dart, .mainline, .suburban]
     private var filterSectedName: String = ""
 
     weak var delegate: TrainStationFilterViewControllerDelegate?
@@ -42,13 +45,13 @@ class TrainStationFilterViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        makeAnimation(hideMenu: false, color: blurrColor)
+        makeAnimation(hideMenu: false, color: TrainStationFilterViewController.Constants.blurrColor)
     }
 
     // MARK: - Set Up
     func setFilter(name: String, stationType: StationType) {
         let pickerView = PickerView(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
-        let pickerViewData: [PickerViewModel] = pickerData.map({ PickerViewModel($0) })
+        let pickerViewData: [PickerViewModel] = TrainStationFilterViewController.Constants.pickerData.map({ PickerViewModel($0) })
         pickerView.setup(viewModels: pickerViewData, selectedViewModel: PickerViewModel(stationType))
         typeTextField.inputView = pickerView
         pickerView.delegate = self
@@ -68,10 +71,10 @@ class TrainStationFilterViewController: UIViewController {
     // Animations for show/hide controller
     private func makeAnimation(hideMenu: Bool, color: UIColor, completion: (() -> Void)? = nil) {
 
-        UIView.animate(withDuration: animationDuration, animations: { [weak self] in
-            self?.backgroundButton.backgroundColor = color
-            self?.backgroundButton.layoutIfNeeded()
-            self?.centeredView.alpha = hideMenu ? 0 : 1
+        UIView.animate(withDuration: TrainStationFilterViewController.Constants.animationDuration, animations: {
+            self.backgroundButton.backgroundColor = color
+            self.backgroundButton.layoutIfNeeded()
+            self.centeredView.alpha = hideMenu ? 0 : 1
             }, completion: { _ in
                 completion?()
         })
@@ -87,7 +90,10 @@ class TrainStationFilterViewController: UIViewController {
         else {
             delegate?.didMakeSearch(name: "", stationType: filterStationType)
         }
-        dismiss(animated: true, completion: nil)
+        
+        makeAnimation(hideMenu: true, color: UIColor.clear) {
+            self.dismiss(animated: false, completion: nil)
+        }
     }
 
     @IBAction func segmentControllerTapped(_ sender: Any) {
@@ -129,7 +135,7 @@ extension TrainStationFilterViewController: PickerViewDelegate {
     }
 
     func didSelect(index: Int) {
-        filterStationType = pickerData[index]
+        filterStationType = TrainStationFilterViewController.Constants.pickerData[index]
         typeTextField.text = filterStationType.name
     }
 }

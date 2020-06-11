@@ -45,10 +45,10 @@ class TrainsViewController: BaseViewController {
     }
 
     private func getNewTrains() {
-        trainsRepository.getTrains(stationType: selectedFilter) { (response) in
+        trainsRepository.getTrains(stationType: selectedFilter) {[weak self] (response) in
+            guard let self = self else { return }
             if let viewModels = response as? [TrainsTableCellViewModel] {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.async {
                     self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
                 }
             }

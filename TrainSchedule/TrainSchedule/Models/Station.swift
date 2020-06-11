@@ -18,11 +18,11 @@ struct Station {
     let stationId: Int?
 
     init(dict: [String: String]) {
-        stationDesc = dict["StationDesc"] ?? ""
-        stationAlias = dict["StationAlias"]
-        stationLatitude = dict["StationLatitude"]?.toDouble() ?? 0.0
-        stationLongitude =  dict["StationLongitude"]?.toDouble() ?? 0.0
-        stationCode = dict["StationCode"] ?? ""
-        stationId = dict["StationId"]?.toInt() ?? 0
+        stationDesc = dict[safeString: "StationDesc"]
+        stationAlias = dict[safeString: "StationAlias"]
+        stationLatitude = dict[safeDouble: "StationLatitude"]
+        stationLongitude =  dict[safeDouble: "StationLongitude"]
+        stationCode = dict[safeString: "StationCode"]
+        stationId = dict[safeInt: "StationId"]
     }
 }

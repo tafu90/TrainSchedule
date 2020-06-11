@@ -22,8 +22,7 @@ class BaseViewController: UIViewController {
 
     func showAlert(_ message: String, title: String, completion: ((UIAlertAction) -> Void)? = nil) {
 
-           DispatchQueue.main.async { [weak self] in
-               guard let self = self else { return }
+           DispatchQueue.main.async {
                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
                alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: completion))
 

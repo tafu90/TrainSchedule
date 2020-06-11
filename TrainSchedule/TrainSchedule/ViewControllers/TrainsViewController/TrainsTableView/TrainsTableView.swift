@@ -17,10 +17,6 @@ class TrainsTableView: BaseTableView {
     }
 
     //MARK: - Table Header
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count
     }
@@ -40,7 +36,7 @@ class TrainsTableView: BaseTableView {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let viewModel = cellViewModels[indexPath.row] as? TrainsTableCellViewModel {
+        if let viewModel = cellViewModels[safe: indexPath.row] as? TrainsTableCellViewModel {
             stationDetailsTableViewDelegate?.checkTrainMove(viewModel.trainCode)
         }
     }

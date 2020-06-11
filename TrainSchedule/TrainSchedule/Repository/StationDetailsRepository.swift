@@ -8,17 +8,20 @@
 
 import Foundation
 
-class StationDetailsRepository {
+class StationDetailsRepository: BaseRepository {
 
     private let stationCode: String
 
-    init(stationCode: String) {
+    init(stationCode: String, urlSession: URLSession) {
         self.stationCode = stationCode
+        super.init(urlSession: urlSession)
     }
 
     func getStationDetails(stationMinutes: String, completion: @escaping (Any?) -> Void) {
 
-        URLSession.shared.dataTask(with: URL.urlGetStationData(stationCode: stationCode, minutes: stationMinutes)) { (data, response, error) in
+        guard let url = URL.urlGetStationData(stationCode: stationCode, minutes: stationMinutes) else { return }
+
+        urlSession.dataTask(with: url) { (data, response, error) in
             if let data = data {
 
                 let stationResponse = StationDetailsResponse(data: data, objectName: "objStationData")

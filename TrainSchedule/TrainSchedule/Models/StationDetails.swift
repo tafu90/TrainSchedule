@@ -34,27 +34,27 @@ struct StationDetails {
     let locationtype: String
 
     init(dict: [String: String]) {
-        traincode = dict["Traincode"] ?? ""
-        stationfullname = dict["Stationfullname"] ?? ""
-        stationcode = dict["Stationcode"] ?? ""
-        traindate =  dict["Traindate"] ?? ""
-        origin = dict["Origin"] ?? ""
-        destination = dict["Destination"] ?? ""
+        traincode = dict[safeString: "Traincode"]
+        stationfullname = dict[safeString: "Stationfullname"]
+        stationcode = dict[safeString: "Stationcode"]
+        traindate =  dict[safeString: "Traindate"]
+        origin = dict[safeString: "Origin"]
+        destination = dict[safeString: "Destination"]
 
-        origintime = dict["Origintime"] ?? ""
-        destinationtime = dict["Destinationtime"] ?? ""
-        status =  dict["Status"] ?? ""
-        lastlocation = dict["Lastlocation"] ?? ""
-        duein = dict["Duein"] ?? ""
+        origintime = dict[safeString: "Origintime"]
+        destinationtime = dict[safeString: "Destinationtime"]
+        status =  dict[safeString: "Status"]
+        lastlocation = dict[safeString: "Lastlocation"]
+        duein = dict[safeString: "Duein"]
 
-        late = dict["Late"] ?? ""
-        exparrival = dict["Exparrival"] ?? ""
-        expdepart =  dict["Expdepart"] ?? ""
-        scharrival = dict["Scharrival"] ?? ""
-        schdepart = dict["Schdepart"] ?? ""
+        late = dict[safeString: "Late"]
+        exparrival = dict[safeString: "Exparrival"]
+        expdepart =  dict[safeString: "Expdepart"]
+        scharrival = dict[safeString: "Scharrival"]
+        schdepart = dict[safeString: "Schdepart"]
 
-        direction =  dict["Direction"] ?? ""
-        traintype = dict["Traintype"] ?? ""
-        locationtype = dict["Locationtype"] ?? ""
+        direction =  dict[safeString: "Direction"]
+        traintype = dict[safeString: "Traintype"]
+        locationtype = dict[safeString: "Locationtype"]
     }
 }

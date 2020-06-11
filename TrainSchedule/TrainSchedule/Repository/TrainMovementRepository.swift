@@ -8,19 +8,21 @@
 
 import Foundation
 
-class TrainMovementRepository {
+class TrainMovementRepository: BaseRepository {
 
     private let trainCode: String
 
-    init(trainCode: String) {
+    init(trainCode: String, urlSession: URLSession) {
         self.trainCode = trainCode
+        super.init(urlSession: urlSession)
     }
 
     func getTrainMovement(completion: @escaping (Any?) -> Void) {
 
         let dateString = Date().toString()?.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? ""
+        guard let url = URL.urlGetTrainMovements(trainCode: trainCode, date: dateString) else { return }
 
-        URLSession.shared.dataTask(with: URL.urlGetTrainMovements(trainCode: trainCode, date: dateString)) { (data, response, error) in
+        urlSession.dataTask(with: url) { (data, response, error) in
             if let data = data {
 
                 let stationResponse = TrainMovementResponse(data: data, objectName: "objTrainMovements")
