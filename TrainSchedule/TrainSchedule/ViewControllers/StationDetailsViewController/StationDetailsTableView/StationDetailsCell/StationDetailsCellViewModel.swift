@@ -59,6 +59,8 @@ struct StationDetailsCellViewModel: TableViewCellViewModel {
             locationtype = "Destination"
         case "S":
             locationtype = "Stop"
+        case "T":
+            locationtype = "TimingPoint"
         default:
             locationtype = ""
         }

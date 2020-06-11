@@ -77,6 +77,7 @@ extension StationDetailsViewController: TableViewUpdateProtocol {
 extension StationDetailsViewController: StationDetailsTableViewDelegate {
 
     func checkTrainMove(_ code: String) {
-        print("Train movement view controller")
+        let trainMovementVC = AppFactory.trainMovementViewController(code)
+        navigationController?.pushViewController(trainMovementVC, animated: true)
     }
 }

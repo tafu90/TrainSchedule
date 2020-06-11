@@ -23,6 +23,17 @@
 		E522A1F2249188C7006ADE19 /* StationDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1F0249188C7006ADE19 /* StationDetailsCell.swift */; };
 		E522A1F3249188C7006ADE19 /* StationDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E522A1F1249188C7006ADE19 /* StationDetailsCell.xib */; };
 		E522A1F5249188DB006ADE19 /* StationDetailsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1F4249188DB006ADE19 /* StationDetailsCellViewModel.swift */; };
+		E522A1F924919DD0006ADE19 /* TrainMovementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1F724919DD0006ADE19 /* TrainMovementViewController.swift */; };
+		E522A1FA24919DD0006ADE19 /* TrainMovementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E522A1F824919DD0006ADE19 /* TrainMovementViewController.xib */; };
+		E522A1FC2491A44B006ADE19 /* TrainMovementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1FB2491A44B006ADE19 /* TrainMovementRepository.swift */; };
+		E522A1FF2491A61A006ADE19 /* TrainMovementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A1FE2491A61A006ADE19 /* TrainMovementTableView.swift */; };
+		E522A2032491A641006ADE19 /* TrainMovementTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A2012491A641006ADE19 /* TrainMovementTableCell.swift */; };
+		E522A2042491A641006ADE19 /* TrainMovementTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E522A2022491A641006ADE19 /* TrainMovementTableCell.xib */; };
+		E522A2062491A65C006ADE19 /* TrainMovementTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A2052491A65C006ADE19 /* TrainMovementTableCellViewModel.swift */; };
+		E522A2082491A945006ADE19 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A2072491A945006ADE19 /* AppFactory.swift */; };
+		E522A20A2491AD17006ADE19 /* TrainMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A2092491AD17006ADE19 /* TrainMovement.swift */; };
+		E522A20C2491B063006ADE19 /* TrainMovementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A20B2491B063006ADE19 /* TrainMovementResponse.swift */; };
+		E522A20E2491B5DB006ADE19 /* Date+TrainSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522A20D2491B5DB006ADE19 /* Date+TrainSchedule.swift */; };
 		E5E0C9B8248F734900D2FA30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */; };
 		E5E0C9BA248F734900D2FA30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */; };
 		E5E0C9BF248F734900D2FA30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0C9BD248F734900D2FA30 /* Main.storyboard */; };
@@ -64,6 +75,17 @@
 		E522A1F0249188C7006ADE19 /* StationDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsCell.swift; sourceTree = "<group>"; };
 		E522A1F1249188C7006ADE19 /* StationDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationDetailsCell.xib; sourceTree = "<group>"; };
 		E522A1F4249188DB006ADE19 /* StationDetailsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailsCellViewModel.swift; sourceTree = "<group>"; };
+		E522A1F724919DD0006ADE19 /* TrainMovementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovementViewController.swift; sourceTree = "<group>"; };
+		E522A1F824919DD0006ADE19 /* TrainMovementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainMovementViewController.xib; sourceTree = "<group>"; };
+		E522A1FB2491A44B006ADE19 /* TrainMovementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovementRepository.swift; sourceTree = "<group>"; };
+		E522A1FE2491A61A006ADE19 /* TrainMovementTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovementTableView.swift; sourceTree = "<group>"; };
+		E522A2012491A641006ADE19 /* TrainMovementTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovementTableCell.swift; sourceTree = "<group>"; };
+		E522A2022491A641006ADE19 /* TrainMovementTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainMovementTableCell.xib; sourceTree = "<group>"; };
+		E522A2052491A65C006ADE19 /* TrainMovementTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovementTableCellViewModel.swift; sourceTree = "<group>"; };
+		E522A2072491A945006ADE19 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		E522A2092491AD17006ADE19 /* TrainMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovement.swift; sourceTree = "<group>"; };
+		E522A20B2491B063006ADE19 /* TrainMovementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMovementResponse.swift; sourceTree = "<group>"; };
+		E522A20D2491B5DB006ADE19 /* Date+TrainSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TrainSchedule.swift"; sourceTree = "<group>"; };
 		E5E0C9B4248F734900D2FA30 /* TrainSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E0C9B7248F734900D2FA30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E0C9B9248F734900D2FA30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +128,7 @@
 			children = (
 				E522A1CB2491163C006ADE19 /* StationsRepository.swift */,
 				E522A1E12491748B006ADE19 /* StationDetailsRepository.swift */,
+				E522A1FB2491A44B006ADE19 /* TrainMovementRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -157,6 +180,35 @@
 			path = StationDetailsCell;
 			sourceTree = "<group>";
 		};
+		E522A1F624919D9F006ADE19 /* TrainMovementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E522A1FD2491A541006ADE19 /* TrainMovementTableView */,
+				E522A1F724919DD0006ADE19 /* TrainMovementViewController.swift */,
+				E522A1F824919DD0006ADE19 /* TrainMovementViewController.xib */,
+			);
+			path = TrainMovementViewController;
+			sourceTree = "<group>";
+		};
+		E522A1FD2491A541006ADE19 /* TrainMovementTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E522A2002491A623006ADE19 /* TrainMovementTableCell */,
+				E522A1FE2491A61A006ADE19 /* TrainMovementTableView.swift */,
+			);
+			path = TrainMovementTableView;
+			sourceTree = "<group>";
+		};
+		E522A2002491A623006ADE19 /* TrainMovementTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				E522A2012491A641006ADE19 /* TrainMovementTableCell.swift */,
+				E522A2022491A641006ADE19 /* TrainMovementTableCell.xib */,
+				E522A2052491A65C006ADE19 /* TrainMovementTableCellViewModel.swift */,
+			);
+			path = TrainMovementTableCell;
+			sourceTree = "<group>";
+		};
 		E5E0C9AB248F734900D2FA30 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +250,7 @@
 				E5E0C9F42490E57B00D2FA30 /* BaseTableView.swift */,
 				E5E0C9FF2490E96900D2FA30 /* ReusableTableViewCell.swift */,
 				E522A1CF24911A2C006ADE19 /* BaseViewController.swift */,
+				E522A20D2491B5DB006ADE19 /* Date+TrainSchedule.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -209,6 +262,7 @@
 				E5E0C9DE248FF65D00D2FA30 /* Station.swift */,
 				E522A1DF24914345006ADE19 /* StationType.swift */,
 				E522A1E524917618006ADE19 /* StationDetails.swift */,
+				E522A2092491AD17006ADE19 /* TrainMovement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +272,7 @@
 			children = (
 				E5E0C9DD248FF65D00D2FA30 /* StationResponse.swift */,
 				E522A1E3249175B9006ADE19 /* StationDetailsResponse.swift */,
+				E522A20B2491B063006ADE19 /* TrainMovementResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -225,11 +280,13 @@
 		E5E0C9E32490D26700D2FA30 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E522A1F624919D9F006ADE19 /* TrainMovementViewController */,
 				E522A1E72491794E006ADE19 /* StationDetailsViewController */,
 				E522A1D124911C09006ADE19 /* TrainStationFilterViewController */,
 				E5E0C9E92490D64A00D2FA30 /* TabBarController */,
 				E5E0C9ED2490DF6800D2FA30 /* TrainsViewController */,
 				E5E0C9E42490D27300D2FA30 /* TrainStationsViewController */,
+				E522A2072491A945006ADE19 /* AppFactory.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -350,12 +407,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E522A1DE24913449006ADE19 /* PickerView.xib in Resources */,
+				E522A1FA24919DD0006ADE19 /* TrainMovementViewController.xib in Resources */,
 				E5E0C9C4248F734A00D2FA30 /* LaunchScreen.storyboard in Resources */,
 				E5E0C9F12490DF8000D2FA30 /* TrainsViewController.xib in Resources */,
 				E5E0C9C1248F734A00D2FA30 /* Assets.xcassets in Resources */,
 				E5E0C9E82490D28D00D2FA30 /* TrainStationsViewController.xib in Resources */,
 				E522A1D524911DB3006ADE19 /* TrainStationFilterViewController.xib in Resources */,
 				E5E0C9FA2490E7FD00D2FA30 /* TrainStationTableCell.xib in Resources */,
+				E522A2042491A641006ADE19 /* TrainMovementTableCell.xib in Resources */,
 				E522A1F3249188C7006ADE19 /* StationDetailsCell.xib in Resources */,
 				E522A1EB24917963006ADE19 /* StationDetailsViewController.xib in Resources */,
 				E5E0C9BF248F734900D2FA30 /* Main.storyboard in Resources */,
@@ -371,29 +430,38 @@
 			files = (
 				E522A1EA24917963006ADE19 /* StationDetailsViewController.swift in Sources */,
 				E522A1D424911DB3006ADE19 /* TrainStationFilterViewController.swift in Sources */,
+				E522A2082491A945006ADE19 /* AppFactory.swift in Sources */,
 				E5E0C9F92490E7FD00D2FA30 /* TrainStationTableCell.swift in Sources */,
+				E522A1F924919DD0006ADE19 /* TrainMovementViewController.swift in Sources */,
 				E5E0C9D9248FF65400D2FA30 /* BaseResponseObject.swift in Sources */,
 				E5E0C9E72490D28D00D2FA30 /* TrainStationsViewController.swift in Sources */,
 				E522A1CC2491163C006ADE19 /* StationsRepository.swift in Sources */,
 				E5E0CA002490E96900D2FA30 /* ReusableTableViewCell.swift in Sources */,
+				E522A2032491A641006ADE19 /* TrainMovementTableCell.swift in Sources */,
 				E522A1D024911A2C006ADE19 /* BaseViewController.swift in Sources */,
 				E522A1E22491748B006ADE19 /* StationDetailsRepository.swift in Sources */,
 				E5E0C9EB2490D6B100D2FA30 /* TabBarController.swift in Sources */,
 				E522A1DC24913439006ADE19 /* PickerView.swift in Sources */,
 				E5E0C9DA248FF65400D2FA30 /* URL+TrainSchedule.swift in Sources */,
+				E522A1FC2491A44B006ADE19 /* TrainMovementRepository.swift in Sources */,
+				E522A1FF2491A61A006ADE19 /* TrainMovementTableView.swift in Sources */,
 				E5E0CA022490EB7000D2FA30 /* TrainStationCellViewModel.swift in Sources */,
 				E5E0C9F52490E57B00D2FA30 /* BaseTableView.swift in Sources */,
 				E522A1E4249175B9006ADE19 /* StationDetailsResponse.swift in Sources */,
 				E5E0C9F32490E55800D2FA30 /* ReusableView.swift in Sources */,
 				E522A1F5249188DB006ADE19 /* StationDetailsCellViewModel.swift in Sources */,
 				E522A1E624917618006ADE19 /* StationDetails.swift in Sources */,
+				E522A20A2491AD17006ADE19 /* TrainMovement.swift in Sources */,
 				E522A1EE24918741006ADE19 /* StationDetailsTableView.swift in Sources */,
+				E522A2062491A65C006ADE19 /* TrainMovementTableCellViewModel.swift in Sources */,
 				E5E0C9FC2490E80500D2FA30 /* TrainStationTableView.swift in Sources */,
 				E5E0C9B8248F734900D2FA30 /* AppDelegate.swift in Sources */,
 				E5E0C9F02490DF8000D2FA30 /* TrainsViewController.swift in Sources */,
 				E5E0C9BA248F734900D2FA30 /* SceneDelegate.swift in Sources */,
 				E5E0C9E22490015400D2FA30 /* String+Numbers.swift in Sources */,
 				E5E0C9DF248FF65D00D2FA30 /* StationResponse.swift in Sources */,
+				E522A20E2491B5DB006ADE19 /* Date+TrainSchedule.swift in Sources */,
+				E522A20C2491B063006ADE19 /* TrainMovementResponse.swift in Sources */,
 				E522A1E024914345006ADE19 /* StationType.swift in Sources */,
 				E522A1F2249188C7006ADE19 /* StationDetailsCell.swift in Sources */,
 				E5E0C9E0248FF65D00D2FA30 /* Station.swift in Sources */,

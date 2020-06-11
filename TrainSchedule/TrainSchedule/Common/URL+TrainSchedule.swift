@@ -27,18 +27,13 @@ extension URL {
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 
-    static func urlGetCurrentTrains() -> URL {
-        let urlString = "getCurrentTrainsXML"
-        return URL(string: urlString, relativeTo: baseUrl)!
-    }
+    static func urlGetTrainMovements(trainCode: String, date: String) -> URL {
+        let urlString = "getTrainMovementsXML?TrainId=\(trainCode)&TrainDate=\(date)"
+           return URL(string: urlString, relativeTo: baseUrl)!
+       }
 
     static func urlGetCurrentTrainsByType() -> URL {
         let urlString = "getCurrentTrainsXML_WithTrainType"
-        return URL(string: urlString, relativeTo: baseUrl)!
-    }
-
-    static func urlGetTrainMovements() -> URL {
-        let urlString = "getTrainMovementsXML"
         return URL(string: urlString, relativeTo: baseUrl)!
     }
 }

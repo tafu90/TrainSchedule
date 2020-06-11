@@ -77,10 +77,7 @@ extension TrainStationsViewController: TableViewUpdateProtocol {
 
 extension TrainStationsViewController: TrainStationTableViewDelegate {
     func didSelectStation(_ code: String, title: String) {
-
-        let stationDetailsRepository = StationDetailsRepository(stationCode: code)
-        let stationDetailsVC = StationDetailsViewController(stationDetailsRepository, stationTitle: title)
-        navigationController?.pushViewController(stationDetailsVC, animated: true)
+        navigationController?.pushViewController(AppFactory.stationDetailsViewController(code: code, title: title), animated: true)
     }
 }
 
