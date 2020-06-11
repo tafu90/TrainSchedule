@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrainsViewController: UIViewController {
+class TrainsViewController: BaseViewController {
 
     private let trainsRepository: TrainsRepository
     private let pickerData: [StationType] = [.all, .dart, .mainline, .suburban]
@@ -51,6 +51,9 @@ class TrainsViewController: UIViewController {
                     guard let self = self else { return }
                     self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
                 }
+            }
+            else {
+                self.showAlert("Please try again later", title: "Error")
             }
         }
     }

@@ -10,10 +10,11 @@ import UIKit
 
 class TrainsTableCell: UITableViewCell, ReusableView {
 
-    @IBOutlet weak var trainStatusLabel: UILabel!
-    @IBOutlet weak var trainDateLabel: UILabel!
-    @IBOutlet weak var directionLabel: UILabel!
-    @IBOutlet weak var publicMessageLabel: UILabel!
+    @IBOutlet private weak var trainStatusLabel: UILabel!
+    @IBOutlet private weak var trainDateLabel: UILabel!
+    @IBOutlet private weak var directionLabel: UILabel!
+    @IBOutlet private weak var publicMessageLabel: UILabel!
+    @IBOutlet private weak var trainCodeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class TrainsTableCell: UITableViewCell, ReusableView {
     }
 
      func setUp(_ viewModel: TrainsTableCellViewModel) {
+        trainCodeLabel.text = viewModel.trainCode
         trainStatusLabel.text = viewModel.trainStatus
         trainDateLabel.text = viewModel.trainDate
         directionLabel.text = viewModel.direction

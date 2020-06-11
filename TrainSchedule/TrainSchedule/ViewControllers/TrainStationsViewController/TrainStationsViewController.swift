@@ -56,6 +56,9 @@ class TrainStationsViewController: BaseViewController {
                 self.trainStationTableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
             }
         }
+        else {
+            self.showAlert("Please try again later", title: "Error")
+        }
     }
 
     @objc override func rightButtonTapped() {

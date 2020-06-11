@@ -63,6 +63,9 @@ class StationDetailsViewController: BaseViewController {
                     self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
                 }
             }
+            else {
+                self.showAlert("Please try again later", title: "Error")
+            }
         }
     }
 }

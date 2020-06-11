@@ -19,4 +19,15 @@ class BaseViewController: UIViewController {
 
     @objc func rightButtonTapped() {
     }
+
+    func showAlert(_ message: String, title: String, completion: ((UIAlertAction) -> Void)? = nil) {
+
+           DispatchQueue.main.async { [weak self] in
+               guard let self = self else { return }
+               let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+               alert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: completion))
+
+               self.present(alert, animated: true, completion: nil)
+           }
+       }
 }

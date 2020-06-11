@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrainMovementViewController: UIViewController {
+class TrainMovementViewController: BaseViewController {
 
     private let trainMovementRepository: TrainMovementRepository
     private let stationTitle: String
@@ -47,6 +47,9 @@ class TrainMovementViewController: UIViewController {
                     guard let self = self else { return }
                     self.tableView.update(with: BaseTableViewViewModel(cellViewModels: viewModels))
                 }
+            }
+            else {
+                self.showAlert("Please try again later", title: "Error")
             }
         }
     }
